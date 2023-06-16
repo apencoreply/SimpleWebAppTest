@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+</head>
+<body>
+  <h1>Calculator</h1>
+
+  <form id="calculatorForm">
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1" name="num1" required><br><br>
+
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2" name="num2" required><br><br>
+
+    <input type="submit" value="Calculate">
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("calculatorForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      var num1 = parseInt(document.getElementById("num1").value);
+      var num2 = parseInt(document.getElementById("num2").value);
+
+      var result = calculateSum(num1, num2);
+
+      document.getElementById("result").innerText = "The sum is: " + result;
+    });
+
+    function calculateSum(num1, num2) {
+      return num1 + num2;
+    }
+  </script>
+</body>
+</html>
